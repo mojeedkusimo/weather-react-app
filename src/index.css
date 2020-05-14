@@ -12,7 +12,7 @@ body {
   background-image: url('./assets/cold-bg.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.4s ease-out;
+  transition: 0.7s ease-out;
 }
 
 .app.warm {
@@ -49,7 +49,7 @@ main {
   color: green;
   font-size: 20px;
 
-  transition: 0.4s ease;
+  transition: 0.7s ease;
 }
 
 .search-box .search-bar:focus {
