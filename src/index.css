@@ -28,15 +28,15 @@ body {
 }
 
 .app.rain {
-  background-image: url('./assets/rain-bg.jpg');
-  /* animation: rain 0.3s linear infinite; */
+  background-image: url('./assets/rain-animate2.png');
+  animation: rain 0.5s linear infinite;
 
 }
 
 datalist, option {
   width: 100%;
 }
-.app.rain::before {
+/* .app.rain::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -45,15 +45,15 @@ datalist, option {
   opacity: 0;
   animation: lightening 0.4s linear infinite;
   transition: ease-in-out 0.5s;
-}
+} */
 
 @keyframes rain {
   0% {
-    background-position: 0% 0%;
+    background-position: 30% 100%;
   }
 
   100% {
-    background-position: 20% 100%;
+    background-position: 50% 20%;
   }
 }
 
@@ -100,7 +100,7 @@ datalist, option {
 
 .main.rain{
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
   padding: 25px;
 }
 

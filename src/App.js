@@ -12,47 +12,7 @@ function App() {
 
   const search = event => {
     if (event.key === 'Enter') {
-
-      // let latCoord = query => {
-      //   let latitude = '';
-      //   let Query = query.toLowerCase();
-
-      //   switch (Query) {
-      //     case 'lagos':
-      //       latitude = '6.58';
-      //       break;
-      //     case 'abuja':
-      //       latitude = '9.06';
-      //       break;
-      //     default:
-      //       latitude = '9.08';
-      //       break;
-      //   }
-
-      //   return latitude;
-      // }
-
-      // let lonCoord = query => {
-      //   let longitude = '';
-      //   let Query = query.toLowerCase();
-
-      //   switch (Query) {
-      //     case 'lagos':
-      //       longitude = '3.76';
-      //       break;
-      //     case 'abuja':
-      //       longitude = '7.49';
-      //       break;
-      //     default:
-      //       longitude = '8.68';
-      //       break;
-      //   }
-
-      //   return longitude;
-      // }
-
       // fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-
 
       fetch(`${api.base}weather?lat=${latCoord(query)}&lon=${lonCoord(query)}&units=metric&APPID=${api.key}`)
       .then(res => res.json())
@@ -75,11 +35,110 @@ function App() {
       case 'abuja':
         longitude = '7.49';
         break;
-      // case 'abia':
-      //   longitude = '7.49';
-      //   break;
+      case 'abia':
+        longitude = '7.49';
+        break;
+      case 'adamawa':
+        longitude = '12.5';
+        break;
+      case 'anambra':
+        longitude = '7';
+        break;
+      case 'akwa ibom':
+        longitude = '7.93';
+        break;
+      case 'bauchi':
+        longitude = '10';
+        break;
+      case 'bayelsa':
+        longitude = '6.26';
+        break;
+      case 'benue':
+        longitude = '8.52';
+        break;
+      case 'borno':
+        longitude = '13.16';
+        break;
+      case 'cross river':
+        longitude = '8.32';
+        break;
+      case 'delta':
+        longitude = '6';
+        break;
+      case 'ebonyi':
+        longitude = '8.12';
+        break;
+      case 'edo':
+        longitude = '6';
+        break;
+      case 'enugu':
+        longitude = '7.49';
+        break;
+      case 'gombe':
+        longitude = '11.17';
+        break;
+      case 'jigawa':
+        longitude = '12.02';
+        break;
+      case 'kaduna':
+        longitude = '7.44';
+        break;
+      case 'kano':
+        longitude = '8.52';
+        break;
+      case 'katsina':
+        longitude = '7.6';
+        break;
+      case 'kebbi':
+        longitude = '4';
+        break;
+      case 'kogi':
+        longitude = '7.47';
+        break;
+      case 'kwara':
+        longitude = '9.68';
+        break;
+      case 'lagos':
+        longitude = '3.75';
+        break;
+      case 'nasarawa':
+        longitude = '7.72';
+        break;
+      case 'niger':
+        longitude = '6.56';
+        break;
+      case 'ogun':
+        longitude = '4.25';
+        break;
+      case 'ondo':
+        longitude = '4.83';
+        break;
+      case 'osun':
+        longitude = '5.09';
+        break;
+      case 'oyo':
+        longitude = '3.93';
+        break;
+      case 'plateau':
+        longitude = '8.9';
+        break;
+      case 'rivers':
+        longitude = '7.17';
+        break;
+      case 'sokoto':
+        longitude = '5.24';
+        break;
+      case 'taraba':
+        longitude = '11.37';
+        break;
+      case 'yobe':
+        longitude = '11.96';
+        break;
+      case 'zamfara':
+        longitude = '12.09';
+        break;
       default:
-        longitude = '8.68';
+        longitude = '8';
         break;
     }
 
@@ -97,11 +156,110 @@ function App() {
       case 'abuja':
         latitude = '9.06';
         break;
-      // case 'abia':
-      //   latitude = '5.53';
-      //   break;
+      case 'abia':
+        latitude = '5.53';
+        break;
+      case 'adamawa':
+        latitude = '9.33';
+        break;
+      case 'anambra':
+        latitude = '6.33';
+        break;
+      case 'akwa ibom':
+        latitude = '5.03';
+        break;
+      case 'bauchi':
+        latitude = '10.5';
+        break;
+      case 'bayelsa':
+        latitude = '4.92';
+        break;
+      case 'benue':
+        latitude = '8.32';
+        break;
+      case 'borno':
+        latitude = '11.85';
+        break;
+      case 'cross river':
+        latitude = '4.95';
+        break;
+      case 'delta':
+        latitude = '5.5';
+        break;
+      case 'ebonyi':
+        latitude = '6.32';
+        break;
+      case 'edo':
+        latitude = '6.5';
+        break;
+      case 'enugu':
+        latitude = '6.44';
+        break;
+      case 'gombe':
+        latitude = '10.29';
+        break;
+      case 'jigawa':
+        latitude = '9.6';
+        break;
+      case 'kaduna':
+        latitude = '10.59';
+        break;
+      case 'kano':
+        latitude = '12';
+        break;
+      case 'katsina':
+        latitude = '12.99';
+        break;
+      case 'kebbi':
+        latitude = '11.5';
+        break;
+      case 'kogi':
+        latitude = '9.18';
+        break;
+      case 'kwara':
+        latitude = '11.9';
+        break;
+      case 'lagos':
+        latitude = '6.58';
+        break;
+      case 'nasarawa':
+        latitude = '8.53';
+        break;
+      case 'niger':
+        latitude = '9.61';
+        break;
+      case 'ogun':
+        latitude = '8.53';
+        break;
+      case 'ondo':
+        latitude = '7.1';
+        break;
+      case 'osun':
+        latitude = '7.98';
+        break;
+      case 'oyo':
+        latitude = '7.85';
+        break;
+      case 'plateau':
+        latitude = '9.92';
+        break;
+      case 'rivers':
+        latitude = '4.45';
+        break;
+      case 'sokoto':
+        latitude = '13.06';
+        break;
+      case 'taraba':
+        latitude = '8.88';
+        break;
+      case 'yobe':
+        latitude = '11.75';
+        break;
+      case 'zamfara':
+        latitude = '10.16';
+        break;
       default:
-        latitude = '9.08';
+        latitude = '10';
         break;
     }
 
@@ -124,9 +282,9 @@ function App() {
   }
   return (
     <div className={(typeof weather.main != 'undefined')? 
-    (weather.main.temp >= 35 && weather.main.temp < 40 ? 'app clear' : weather.main.temp >= 40 ? 'app very-hot' : weather.main.temp < 30 ? 'app rain' : 'app cloudy') : 'app'}>
+    (weather.main.temp >= 33 && weather.main.temp < 40 ? 'app clear' : weather.main.temp >= 40 ? 'app very-hot' : weather.main.temp < 25 ? 'app rain' : 'app cloudy') : 'app'}>
       {/* // <div className={typeof weather.main != 'undefined' ? 'app rain': 'app'}> */}
-      <main className={(typeof weather.main != 'undefined') ? (weather.main.temp < 30 ? 'main rain' : 'main') : 'main'}>
+      <main className={(typeof weather.main != 'undefined') ? (weather.main.temp < 25 ? 'main rain' : 'main') : 'main'}>
         <div className='title'>Weather in Nigeria Now</div>
         <div className='search-box'>
 
