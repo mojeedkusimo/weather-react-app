@@ -71,11 +71,17 @@ function App() {
       case 'edo':
         longitude = '6';
         break;
+      case 'ekiti':
+        longitude = '3.38';
+        break;
       case 'enugu':
         longitude = '7.49';
         break;
       case 'gombe':
         longitude = '11.17';
+        break;
+      case 'imo':
+        longitude = '7.03';
         break;
       case 'jigawa':
         longitude = '12.02';
@@ -97,9 +103,6 @@ function App() {
         break;
       case 'kwara':
         longitude = '9.68';
-        break;
-      case 'lagos':
-        longitude = '3.75';
         break;
       case 'nasarawa':
         longitude = '7.72';
@@ -192,11 +195,17 @@ function App() {
       case 'edo':
         latitude = '6.5';
         break;
+      case 'ekiti':
+        latitude = '7.13';
+        break;
       case 'enugu':
         latitude = '6.44';
         break;
       case 'gombe':
         latitude = '10.29';
+        break;
+      case 'imo':
+        latitude = '5.43';
         break;
       case 'jigawa':
         latitude = '9.6';
@@ -218,9 +227,6 @@ function App() {
         break;
       case 'kwara':
         latitude = '11.9';
-        break;
-      case 'lagos':
-        latitude = '6.58';
         break;
       case 'nasarawa':
         latitude = '8.53';
@@ -282,9 +288,9 @@ function App() {
   }
   return (
     <div className={(typeof weather.main != 'undefined')? 
-    (weather.main.temp >= 33 && weather.main.temp < 40 ? 'app clear' : weather.main.temp >= 40 ? 'app very-hot' : weather.main.temp < 25 ? 'app rain' : 'app cloudy') : 'app'}>
+    (weather.main.temp < 30 ? 'app rain' : weather.main.temp > 29 && weather.main.temp < 32 ? 'app cloudy' : weather.main.temp > 31 && weather.main.temp <= 34 ? 'app clear' : weather.main.temp > 35 ? 'app very-hot' : 'app clear') : 'app'}>
       {/* // <div className={typeof weather.main != 'undefined' ? 'app rain': 'app'}> */}
-      <main className={(typeof weather.main != 'undefined') ? (weather.main.temp < 25 ? 'main rain' : 'main') : 'main'}>
+      <main className={(typeof weather.main != 'undefined') ? (weather.main.temp < 29 ? 'main rain' : 'main') : 'main'}>
         <div className='title'>Weather in Nigeria Now</div>
         <div className='search-box'>
 
@@ -308,6 +314,7 @@ function App() {
             <option value="Ekiti"/>
             <option value="Enugu"/>
             <option value='Gombe'/>
+            <option value='Imo'/>
             <option value='Jigawa'/>
             <option value="Kaduna"/>
             <option value="Kano"/>
@@ -334,7 +341,7 @@ function App() {
         {(typeof weather.main != 'undefined') ? (
           <div>
             <div className='location-box'>
-              <div className='location'>{weather.name }, {weather.sys.country}</div>
+              <div className='location'>{weather.name === 'Uyo' ? 'Akwa Ibom' : weather.name === 'Lafia' ? 'Benue' : weather.name === 'Maiduguri' ? 'Borno' : weather.name === 'Calabar' ? 'Cross River' : weather.name === 'Jos' ? 'Plateau' : weather.name === 'Yenagoa' ? 'Bayelsa' : weather.name === 'Abeokuta' ? 'Ekiti' : weather.name === 'Numan' ? 'Jigawa' : weather.name === 'Maitama' ? 'Kogi' : weather.name === 'Shani' ? 'Zamfara' : weather.name === 'Bonny' ? 'Rivers' : weather.name === 'Ipoti' ? 'Osun' : weather.name === 'Alapa' ? 'Ogun' : weather.name === 'Damaturu' ? 'Yobe' :weather.name === 'Jalingo' ? 'Taraba' : weather.name === 'Jigawa State' ? 'Kwara' : weather.name === 'Abakaliki' ?  'Ebonyi' : weather.name === 'Minna' ? 'Niger' : weather.name === 'Owerri' ? 'Imo' : weather.name === 'Umuahia' ? 'Abia' : weather.name }, {weather.sys.country}</div>
               <div className='date'>{dateBuilder(new Date())}</div>
             </div>
 
