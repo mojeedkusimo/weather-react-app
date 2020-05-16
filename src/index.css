@@ -49,11 +49,11 @@ datalist, option {
 
 @keyframes rain {
   0% {
-    background-position: 30% 100%;
+    background-position: 95% 100%;
   }
 
   100% {
-    background-position: 50% 20%;
+    background-position: 100% 80%;
   }
 }
 
