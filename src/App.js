@@ -290,7 +290,7 @@ function App() {
     <div className={(typeof weather.main != 'undefined')? 
     (weather.main.temp < 30 ? 'app rain' : weather.main.temp > 29 && weather.main.temp < 32 ? 'app cloudy' : weather.main.temp > 31 && weather.main.temp <= 34 ? 'app clear' : weather.main.temp > 35 ? 'app very-hot' : 'app clear') : 'app'}>
       {/* // <div className={typeof weather.main != 'undefined' ? 'app rain': 'app'}> */}
-      <main className={(typeof weather.main != 'undefined') ? (weather.main.temp < 29 ? 'main rain' : 'main') : 'main'}>
+      <main className={(typeof weather.main != 'undefined') ? (weather.main.temp < 30 ? 'main rain' : 'main') : 'main'}>
         <div className='title'>Weather in Nigeria Now</div>
         <div className='search-box'>
 
