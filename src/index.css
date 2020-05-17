@@ -141,9 +141,9 @@ datalist, option {
   justify-content: center;
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:768px) {
   .search-box .search-bar, .search-button {
-    font-size: 16px!important;
+    font-size: 22px!important;
   }
 }
 
@@ -151,11 +151,38 @@ datalist, option {
   .search-box .search-bar, .search-button {
     font-size: 12px!important;
   }
+  .title {
+    font-size: 25px!important;
+    /* font-weight: 350!important; */
+  }
+  .weather-box .temp {
+    font-size: 50px!important;
+  }
 }
 
 @media screen and (max-width:320px) {
   .search-box .search-bar, .search-button {
     font-size: 9px!important;
+  }
+}
+
+@media screen and (min-width:1441px) {
+  .search-box .search-bar, .search-button {
+    font-size: 50px!important;
+  }
+  .title {
+    font-size: 100px!important;
+    /* font-weight: 350!important; */
+  }
+  .weather-box .temp {
+    font-size: 200px!important;
+  }
+  .location-box .location {
+    font-size: 64px!important;
+  }
+  
+  .location-box .date {
+    font-size: 40px!important;
   }
 }
 
@@ -187,20 +214,11 @@ datalist, option {
 }
 
 .search-box {
-  width: 80vw;
   margin: 30px auto;
-  /* display: inline-block; */
-
 }
 
-@media screen and (min-width: 768px) {
-  .search-box {
-    width: 50vw;
-  }
- 
-}
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 375px) {
   .title {
     margin-top: 25vh!important;
   }
@@ -259,10 +277,25 @@ datalist, option {
   color: white;
   font-size: 50px;
   font-weight: 700;
-  /* margin-top: 25vh; */
+  margin-top: 20vh;
 }
 
 
 .search-button {
   display: inline-block;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid rgba(255, 255, 255, 0.4);
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 15px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

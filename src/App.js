@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, setState, Component } from 'react';
 const api = {
   key: '0786e0b6c72797557c728a976f5c0ebd',
   base: 'https://api.openweathermap.org/data/2.5/'
@@ -6,11 +6,12 @@ const api = {
 }
 
 function App() {
-
+  let loading = '';
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
   const search = event => {
+    loading = true;
     if (event.key === 'Enter') {
       // fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
 
@@ -20,6 +21,7 @@ function App() {
         setWeather(result);
         setQuery('');
         console.log(result);
+        loading = false;
       });
     }
   }
@@ -33,8 +35,13 @@ function App() {
       setWeather(result);
       setQuery('');
       console.log(result);
+      loading = false;
     });
   }
+
+  // componentDidMount() {
+  //   this.search();
+  // }
 
   let lonCoord = query => {
     let longitude = '';
@@ -360,15 +367,20 @@ function App() {
 
         {(typeof weather.main != 'undefined') ? (
           <div>
+            {(loading === true) ? (<div className='loader'></div>) : (
+            <div>
             <div className='location-box'>
+
               <div className='location'>{weather.name === 'Uyo' ? 'Akwa Ibom' : weather.name === 'Lafia' ? 'Benue' : weather.name === 'Maiduguri' ? 'Borno' : weather.name === 'Calabar' ? 'Cross River' : weather.name === 'Jos' ? 'Plateau' : weather.name === 'Yenagoa' ? 'Bayelsa' : weather.name === 'Abeokuta' ? 'Ekiti' : weather.name === 'Numan' ? 'Jigawa' : weather.name === 'Maitama' ? 'Kogi' : weather.name === 'Shani' ? 'Zamfara' : weather.name === 'Bonny' ? 'Rivers' : weather.name === 'Ipoti' ? 'Osun' : weather.name === 'Alapa' ? 'Ogun' : weather.name === 'Damaturu' ? 'Yobe' :weather.name === 'Jalingo' ? 'Taraba' : weather.name === 'Jigawa State' ? 'Kwara' : weather.name === 'Abakaliki' ?  'Ebonyi' : weather.name === 'Minna' ? 'Niger' : weather.name === 'Owerri' ? 'Imo' : weather.name === 'Umuahia' ? 'Abia' : weather.name }, {weather.sys.country}</div>
+              }
+
               <div className='date'>{dateBuilder(new Date())}</div>
             </div>
-
             <div className='weather-box'>
-            <div className='temp'>{Math.round(weather.main.temp)}&#8451;</div>
-              {/* <div className='weather'>{weather.weather[0].icon}</div> */}
+              <div className='temp'>{Math.round(weather.main.temp)}&#8451;</div>
             </div>
+            </div>
+            )}
           </div>
         ): ('')}
       </main>
