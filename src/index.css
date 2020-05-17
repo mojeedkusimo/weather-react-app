@@ -113,6 +113,52 @@ datalist, option {
   margin: 0 0 75px;
 }
 
+.search-button {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(10, 8, 8, 0.5);
+  border-radius:  0 16px 16px 0px;
+  /* margin-top: -25px; */
+
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width:1024px) {
+  .search-box .search-bar, .search-button {
+    font-size: 16px!important;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .search-box .search-bar, .search-button {
+    font-size: 12px!important;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .search-box .search-bar, .search-button {
+    font-size: 9px!important;
+  }
+}
+
 .search-box .search-bar {
   display: block;
   width: 100%;
@@ -124,19 +170,40 @@ datalist, option {
   outline: none;
 
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius:  16px;
+  border-radius:  16px 0px 0px 16px;
   /* margin-top: -25px; */
 
   box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
 
-  color: green;
-  font-size: 20px;
+  color: gray;
+  font-size: 25px;
+  font-weight: 700;
 
   transition: 0.7s ease;
 }
 
 .search-box .search-bar:focus {
   background-color: white;
+}
+
+.search-box {
+  width: 80vw;
+  margin: 30px auto;
+  /* display: inline-block; */
+
+}
+
+@media screen and (min-width: 768px) {
+  .search-box {
+    width: 50vw;
+  }
+ 
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    margin-top: 25vh!important;
+  }
 }
 
 .location-box .location {
@@ -187,9 +254,15 @@ datalist, option {
 
 .title {
   text-align: center;
-  margin: 30px auto;
+  margin: 0 auto;
 
   color: white;
   font-size: 50px;
   font-weight: 700;
+  /* margin-top: 25vh; */
+}
+
+
+.search-button {
+  display: inline-block;
 }

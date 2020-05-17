@@ -24,6 +24,18 @@ function App() {
     }
   }
 
+  const getWeather = () => {
+    // fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+
+    fetch(`${api.base}weather?lat=${latCoord(query)}&lon=${lonCoord(query)}&units=metric&APPID=${api.key}`)
+    .then(res => res.json())
+    .then(result => {
+      setWeather(result);
+      setQuery('');
+      console.log(result);
+    });
+  }
+
   let lonCoord = query => {
     let longitude = '';
     let Query = query.toLowerCase();
@@ -294,50 +306,58 @@ function App() {
         <div className='title'>Weather in Nigeria Now</div>
         <div className='search-box'>
 
-          {/* <input type='text' className='search-bar' placeholder='Search for a State...' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/> */}
+        {/* <input type='text' className='search-bar' placeholder='Search for a State...' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/> */}
+        <div className='search-container'>
+          <div className='input-div'>
+            <input list="states" name="state" id="state" className='search-bar' placeholder='Search for a State...' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
+          </div>
+          <div className='button-div'>
+            <button className='search-button' onClick={getWeather}>Get Weather</button>
+          </div>
+        </div>
 
-          <input list="states" name="state" id="state" className='search-bar' placeholder='Search for a State...' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
-          <datalist id="states" className='datalist'>
-            <option value="Abia"/>
-            <option value='Abuja'/>
-            <option value="Adamawa"/>
-            <option value='Akwa Ibom'/>
-            <option value='Anambra'/>
-            <option value="Bauchi"/>
-            <option value="Bayelsa"/>
-            <option value='Benue'/>
-            <option value='Borno'/>
-            <option value="Cross River"/>
-            <option value="Delta"/>
-            <option value='Ebonyi'/>
-            <option value='Edo'/>
-            <option value="Ekiti"/>
-            <option value="Enugu"/>
-            <option value='Gombe'/>
-            <option value='Imo'/>
-            <option value='Jigawa'/>
-            <option value="Kaduna"/>
-            <option value="Kano"/>
-            <option value='Katsina'/>
-            <option value='Kebbi'/>
-            <option value="Kogi"/>
-            <option value="Kwara"/>
-            <option value='Lagos'/>
-            <option value='Nasarawa'/>
-            <option value="Niger"/>
-            <option value="Ogun"/>
-            <option value='Ondo'/>
-            <option value='Osun'/>
-            <option value="Oyo"/>
-            <option value="Plateau"/>
-            <option value='Rivers'/>
-            <option value='Sokoto'/>
-            <option value="Taraba"/>
-            <option value="Yobe"/>
-            <option value='Zamfara'/>
+        <datalist id="states" className='datalist'>
+          <option value="Abia"/>
+          <option value='Abuja'/>
+          <option value="Adamawa"/>
+          <option value='Akwa Ibom'/>
+          <option value='Anambra'/>
+          <option value="Bauchi"/>
+          <option value="Bayelsa"/>
+          <option value='Benue'/>
+          <option value='Borno'/>
+          <option value="Cross River"/>
+          <option value="Delta"/>
+          <option value='Ebonyi'/>
+          <option value='Edo'/>
+          <option value="Ekiti"/>
+          <option value="Enugu"/>
+          <option value='Gombe'/>
+          <option value='Imo'/>
+          <option value='Jigawa'/>
+          <option value="Kaduna"/>
+          <option value="Kano"/>
+          <option value='Katsina'/>
+          <option value='Kebbi'/>
+          <option value="Kogi"/>
+          <option value="Kwara"/>
+          <option value='Lagos'/>
+          <option value='Nasarawa'/>
+          <option value="Niger"/>
+          <option value="Ogun"/>
+          <option value='Ondo'/>
+          <option value='Osun'/>
+          <option value="Oyo"/>
+          <option value="Plateau"/>
+          <option value='Rivers'/>
+          <option value='Sokoto'/>
+          <option value="Taraba"/>
+          <option value="Yobe"/>
+          <option value='Zamfara'/>
           </datalist>
 
         </div>
+
         {(typeof weather.main != 'undefined') ? (
           <div>
             <div className='location-box'>
